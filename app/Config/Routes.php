@@ -58,7 +58,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php'))
  * only routes that have been defined here will be available.
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Login');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();

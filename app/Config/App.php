@@ -21,7 +21,7 @@ class App extends BaseConfig
 	| environments.
 	|
 	*/
-	public $baseURL = 'http://localhost:8080';
+	public $baseURL = 'http://localhost:81/UMS/';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -99,7 +99,7 @@ class App extends BaseConfig
 	| dates with the date helper, and can be retrieved through app_timezone()
 	|
 	*/
-	public $appTimezone = 'America/Chicago';
+	public $appTimezone = 'Asia/Jakarta';
 
 	/*
 	|--------------------------------------------------------------------------
@@ -182,7 +182,7 @@ class App extends BaseConfig
 	|
 	*/
 	public $sessionDriver            = 'CodeIgniter\Session\Handlers\FileHandler';
-	public $sessionCookieName        = 'ci_session';
+	public $sessionCookieName        = 'ums_session';
 	public $sessionExpiration        = 7200;
 	public $sessionSavePath          = WRITEPATH . 'session';
 	public $sessionMatchIP           = false;
@@ -265,5 +265,8 @@ class App extends BaseConfig
 	|   - http://www.w3.org/TR/CSP/
 	*/
 	public $CSPEnabled = false;
+
+	public $siteName = 'UMS - Unified Monitoring Service';
+	public $siteEmail = "hendset.ti04@gmail.com";
 
 }
