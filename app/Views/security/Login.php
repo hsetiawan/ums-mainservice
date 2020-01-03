@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title><?= $siteName ?></title>
+	<title><?= $siteTitle; ?></title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
 
@@ -24,8 +24,7 @@
 	<link rel="stylesheet" href="assets/css/custom.css">
 
 
-</head>
-<style>
+	<style>
 	.login{height: -webkit-fill-available;min-height: 100vh;}
 	.show-password{
 		position: absolute;
@@ -51,6 +50,7 @@
  		background-size: 250px 100px;
 	}
 </style>
+</head>
 <body >
 	
 	<div class="row mr-0 login" >

@@ -4,7 +4,8 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('security/Login');
+		$data['siteTitle'] = $siteName;
+		return view('security/Login', $data);
 	}
 
 	//--------------------------------------------------------------------
