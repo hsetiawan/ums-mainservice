@@ -2,12 +2,15 @@
 
 class Login extends BaseController
 {
-    public function index()
-    { 
-         $data['siteTitle'] = $_ENV['siteName'];
-        return view('security/Login', $data);
-    }
 
+	public function index()
+	{
+		$data['siteTitle'] = 'UMS - Unified Monitoring Service';
+		return view('security/Login', $data);
+	}
 
-    
+	public function auth()
+	{
+	}
+
 }

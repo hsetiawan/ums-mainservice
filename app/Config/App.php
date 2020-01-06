@@ -266,7 +266,4 @@ class App extends BaseConfig
 	*/
 	public $CSPEnabled = false;
 
-	public $siteName = 'UMS - Unified Monitoring Service';
-	public $siteEmail = "hendset.ti04@gmail.com";
-
 }

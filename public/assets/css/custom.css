@@ -39,3 +39,30 @@
 body{font-family: 'GothamRoundedBook' !important;
     font-size: 12px !important;    
 }
+
+
+
+.login{height: -webkit-fill-available;min-height: 100vh;}
+.show-password{
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+.register-slogan {
+  background-image: linear-gradient(rgba(196, 199, 10, 0.733), rgba(3, 72, 121, 0.425)), url("../img/amazing-Green-Leaf-Background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.powered-by{
+  background-image:  url("../img/Angkasa_Pura_II_logo_2014.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+   position: relative;
+   background-size: 250px 100px;
+}
