@@ -47,16 +47,32 @@
 					Untuk memulai menggunakan layanan dari aplikasi ini
 					</p>	
 
-					<?php if(\Config\Services::validation()->listErrors() !== null): ?>
+					<?php if(\Config\Services::validation()->listErrors() != null): ?>
 						<div class="alert alert-danger bg-danger text-white h5" id="alert-login" role="alert" >
 							Username or Password field is required.
 						</div>
 					<?php endif ?>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 	  
+					<form class="form-signin pt-2">
+						<div class="form-group form-floating-label py-3 mt-4">
+							<input type="text" id="username" name="username" class="form-control input-border-bottom" required autofocus>
+							<label for="username" class="placeholder">Username</label>
+						</div>
+		
+						<div class="form-group form-floating-label  py-2 my-3">
+							<input type="password" id="password" name="password" class="form-control input-border-bottom"  required>
+							<label for="inputPassword" class="placeholder">Password</label>
+							<div class="show-password">
+									<i class="icon-eye"></i>
+							</div>
+						</div>
+					
+						<button type="submit" class="my-3 btn btn-lg btn-primary btn-block text-uppercase">Login</button>
+					</form>
 	<!--   Core JS Files   -->
 	<script src="<?= base_url('assets/js/core/jquery.3.2.1.min.js') ?>"></script>
-	 <script src="<?= base_url('assets/js/core/bootstrap.min.js') ?>"></script>
-  
+	<script src="<?= base_url('assets/js/core/bootstrap.min.js') ?>"></script>
+
 
 	<!-- Atlantis JS -->
 	<script src="<?= base_url('assets/js/atlantis.min.js') ?>"></script>
