@@ -8,4 +8,9 @@ class User extends Codeigniter\Model{
 		'employeeId',
 		'status',
 	];
+
+	protected $primaryKey     = 'id';
+	protected $useSoftDeletes = true;
+
+	protected $useTimestamps = true;
 }

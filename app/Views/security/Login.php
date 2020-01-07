@@ -2,15 +2,27 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title><?= $siteTitle; ?></title>
+	<title>UMS - Unified Monitoring Service - Login</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon"/>
+	<link rel="icon" href="<?= base_url('assets/img/favicon.ico') ?>" type="image/x-icon"/>
  
-	<!-- CSS Files -->
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/atlantis.min.css">
-	<link rel="stylesheet" href="assets/css/custom.css">
+	 <!-- Fonts and icons -->
+	 <script src="<?= base_url('assets/js/plugin/webfont/webfont.min.js') ?>"></script>
+	<script>
+		WebFont.load({
+			google: {"families":["Lato:300,400,700,900"]},
+			custom: {"families":["Flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands", "simple-line-icons"], urls: ['assets/css/fonts.min.css']},
+			active: function() {
+				sessionStorage.fonts = true;
+			}
+		});
+	</script>
 
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/css/atlantis.min.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/css/fonts.min.css') ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/css/custom.css') ?>">
 
 </head>
 <body >
@@ -19,10 +31,10 @@
 		<div class="col align-items-center col-xl-8 col-md-8  bg-dark register-slogan">
 				<div class="row align-items-center h-100">
 					<div class="col-xl-12 login-img-area  text-center my-2">
-						<img src="assets/img/logo_ums.svg" class="w-75">
+						<img src="<?= base_url('assets/img/logo_ums.svg') ?>" class="w-75">
 						<div class="my-3 py-5 text-dark powered-by">
 							Powered By :
- 						</div>
+						 </div>
 					</div>
 				</div>
 		</div>
@@ -35,35 +47,21 @@
 					Untuk memulai menggunakan layanan dari aplikasi ini
 					</p>	
 
-				 
-
-					<form class="form-signin" action="<?= site_url('Login/doLogin');?>" method="post">
-						<div class="form-group form-floating-label pb-2">
-							<input type="text" name="username" id="username" class="form-control input-border-bottom" required autofocus>
-							<label for="username" class="placeholder">Username</label>
+					<?php if(\Config\Services::validation()->listErrors() !== null): ?>
+						<div class="alert alert-danger bg-danger text-white h5" id="alert-login" role="alert" >
+							Username or Password field is required.
 						</div>
-		
-						<div class="form-group form-floating-label  py-2 my-3">
-							<input type="password" id="password" name="userPass" class="form-control input-border-bottom"  required>
-							<label for="inputPassword" class="placeholder">Password</label>
-							<div class="show-password">
-									<i class="icon-eye"></i>
-							</div>
-						</div>
-				
-						<button type="submit" class="my-3 btn btn-lg btn-primary btn-block text-uppercase">Login</button>
-					</form>
-					</div>
-				</div>
-		</div>
-	</div>
-
+					<?php endif ?>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 	  
 	<!--   Core JS Files   -->
-	<script src="assets/js/core/jquery.3.2.1.min.js"></script>
- 	<script src="assets/js/core/bootstrap.min.js"></script>
+	<script src="<?= base_url('assets/js/core/jquery.3.2.1.min.js') ?>"></script>
+	 <script src="<?= base_url('assets/js/core/bootstrap.min.js') ?>"></script>
   
+
+	<!-- Atlantis JS -->
+	<script src="<?= base_url('assets/js/atlantis.min.js') ?>"></script>
+
 	<!-- Login JS -->
-	<script src="assets/js/login.js"></script>
+	<script src="<?= base_url('assets/js/login.js') ?>"></script>
 </body>
 </html>
