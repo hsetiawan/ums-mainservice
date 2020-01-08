@@ -1,16 +1,30 @@
-<?php
+<?php namespace App\Models;
 
-class User extends Codeigniter\Model{
+use CodeIgniter\Model;
+
+class User extends Model{
 
 	protected $table         = 'users';
 	protected $allowedFields = [
 		'fullname',
-		'employeeId',
-		'status',
+ 		'status',
+		'username',
+		'password'
 	];
 
 	protected $primaryKey     = 'id';
 	protected $useSoftDeletes = true;
 
 	protected $useTimestamps = true;
+	protected $createdField  = 'date_created';
+	protected $updatedField  = 'date_modified';
+
+	public function getByUsername($username){
+		$model = new User;
+		return $model->where('status', 1)
+					 ->where('is_deleted', 1)
+					 ->where('username', $username)
+ 					 ->first();
+
+	}
 }
