@@ -43,24 +43,31 @@
 				<div class="card card-signin  border border-white shadow-none">
 					<div class="card-body ">
 					<h2 class="text-center py-4">Sign <strong>In</strong></h2>
-					<p class="text-center text-black-50 pt-5">Silahkan masukan username dan password anda  yang sudah terdaftar.
-					Untuk memulai menggunakan layanan dari aplikasi ini
+					<p class="text-center text-black-50 pt-5">
+						Silahkan masukan username dan password anda  yang sudah terdaftar.
+						Untuk memulai menggunakan layanan dari aplikasi ini
 					</p>	
 
-					<?php if(\Config\Services::validation()->listErrors() != null): ?>
+ 					<?php if(\Config\Services::validation()->listErrors() != null): ?>
 						<div class="alert alert-danger bg-danger text-white h5" id="alert-login" role="alert" >
 							Username or Password field is required.
 						</div>
-					<?php endif ?>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-	  
-					<form class="form-signin pt-2">
+					<?php endif ?> 
+					<?php $session = session(); 
+						if(!empty($session->getFlashdata('failed'))):
+					?>        
+					<div class="alert alert-danger bg-danger text-white h5" id="alert-login" role="alert" >
+						<?= $session->getFlashdata('failed');?>
+					</div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+					<?php endif ?>
+					<form class="form-signin" method="POST" action="<?= base_url('Login/auth'); ?>">
 						<div class="form-group form-floating-label py-3 mt-4">
-							<input type="text" id="username" name="username" class="form-control input-border-bottom" required autofocus>
+							<input type="text" id="username" name="username" class="form-control input-border-bottom" required  autofocus>
 							<label for="username" class="placeholder">Username</label>
 						</div>
 		
 						<div class="form-group form-floating-label  py-2 my-3">
-							<input type="password" id="password" name="password" class="form-control input-border-bottom"  required>
+							<input type="password" id="password" name="password" class="form-control input-border-bottom" required  >
 							<label for="inputPassword" class="placeholder">Password</label>
 							<div class="show-password">
 									<i class="icon-eye"></i>
@@ -69,6 +76,10 @@
 					
 						<button type="submit" class="my-3 btn btn-lg btn-primary btn-block text-uppercase">Login</button>
 					</form>
+					</div>	
+				</div>
+			</div>	
+	</div>				
 	<!--   Core JS Files   -->
 	<script src="<?= base_url('assets/js/core/jquery.3.2.1.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/core/bootstrap.min.js') ?>"></script>
