@@ -38,7 +38,7 @@ class Login extends BaseController
 		}
 
 		//set session
-		//redirect to dashboard
+		return Dashboard::index();
   
 	}
 
@@ -53,6 +53,7 @@ class Login extends BaseController
 		return Login::index();
 	}
 
+	
  
 
 } 
